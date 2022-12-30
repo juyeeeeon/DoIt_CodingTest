@@ -1,4 +1,4 @@
-package ex03_2_구간합구하기4;
+package ex03_2_구간합;
 
 import java.io.BufferedReader;
 import java.io.IOException;
