@@ -1,4 +1,4 @@
-package ex03_3_투포인터;
+package dataStructure.ex03_2_구간합;
 
 import java.util.Scanner;
 

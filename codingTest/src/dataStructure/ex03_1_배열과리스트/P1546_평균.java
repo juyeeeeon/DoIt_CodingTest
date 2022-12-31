@@ -1,4 +1,4 @@
-package ex03_1_배열과리스트;
+package dataStructure.ex03_1_배열과리스트;
 
 import java.util.Scanner;
 
