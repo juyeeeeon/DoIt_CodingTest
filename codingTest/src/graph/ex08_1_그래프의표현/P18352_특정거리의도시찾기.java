@@ -9,12 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
-//왜틀린지 모르겟다
+
 public class P18352_특정거리의도시찾기 {
-	static boolean[] visited;
+	static int[] visited; //visited을 boolean이 아닌 int로 표현 시 K(거리정보)을 나타낼 수 있음
 	static ArrayList<Integer>[] arr;
-	static int count;
-	static List<Integer> result;
+	static int K;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,12 +21,14 @@ public class P18352_특정거리의도시찾기 {
 		
 		int N = Integer.parseInt(st.nextToken()); //도시의 개수
 		int M = Integer.parseInt(st.nextToken()); //도로의 개수
-		int K = Integer.parseInt(st.nextToken()); //거리 정보
+		K = Integer.parseInt(st.nextToken()); //거리 정보
 		int X = Integer.parseInt(st.nextToken()); //출발 도시의 번호
 		
-		visited = new boolean[N+1];
+		visited = new int[N+1];
+		for(int i=0; i<visited.length; i++) {
+			visited[i] = -1;
+		}
 		arr = new ArrayList[N+1];
-		count = K;
 		for(int i=0; i<N+1; i++) {
 			arr[i] = new ArrayList<>();
 		}
@@ -40,29 +41,34 @@ public class P18352_특정거리의도시찾기 {
 		}
 		
 		BFS(X);
+
+		List<Integer> result = new ArrayList<>();
+		
+		for(int i=0; i<visited.length; i++) {
+			if(visited[i] == K) result.add(i);
+		}
 		if(result.isEmpty()) System.out.println(-1);
 		else {
 			Collections.sort(result);
-			for(int i : result) System.out.println(i);
+			for(int i:result) {
+				System.out.println(i);
+			}
 		}
+		
+		
 		
 	}
 
 	private static void BFS(int x) throws IOException {
-		result = new ArrayList<>();
-		
 		Queue<Integer> queue = new LinkedList<>();
 		queue.add(x);
-		visited[x] = true;
+		visited[x]++;
 		
-		int cnt = 0;
 		while(!queue.isEmpty()) {
 			int new_node = queue.poll();
-			cnt++;
 			for(int i : arr[new_node]) {
-				if(!visited[i]) {
-					visited[i]=true;
-					if(cnt == count) result.add(i);
+				if(visited[i]==-1) {
+					visited[i] = visited[new_node]+1;
 					queue.add(i);
 				}
 			}
