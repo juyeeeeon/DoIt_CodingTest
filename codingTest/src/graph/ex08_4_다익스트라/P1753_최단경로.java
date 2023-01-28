@@ -50,8 +50,7 @@ public class P1753_최단경로 {
 			if(visited[curNode]) continue;
 			else visited[curNode] = true;
 			
-			for(int i=0; i<arr[curNode].size(); i++) {
-				Node tmp = arr[curNode].get(i);
+			for(Node tmp : arr[curNode]) {
 				int next = tmp.node;
 				int value = tmp.value;
 				if(distance[next] > distance[curNode] + value) {
