@@ -15,6 +15,7 @@ public class P1197_최소스패닝트리 {
 		int V = Integer.parseInt(st.nextToken());
 		int E = Integer.parseInt(st.nextToken());
 		
+		//엣지리스트
 		PriorityQueue<Edge> queue = new PriorityQueue<>(); //가중치(C)를 오름차순 정렬
 		for(int i=0; i<E; i++) {
 			st = new StringTokenizer(br.readLine());
