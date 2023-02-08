@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class P9252_LCS2 {
 //https://www.youtube.com/watch?v=z8KVLz9BFIo 참고
+//https://velog.io/@emplam27/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-LCS-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Longest-Common-Substring%EC%99%80-Longest-Common-Subsequence
+//https://loosie.tistory.com/183 (dp 이차원 배열 참고)
 	static char[] A;
 	static char[] B;
 	static long[][] dp;
