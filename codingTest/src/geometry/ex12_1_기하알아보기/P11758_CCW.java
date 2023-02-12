@@ -23,7 +23,9 @@ public class P11758_CCW {
 			y[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		//기하학 기초 알고리즘 CCW(Counter ClockWise)
+		//기하학 기초 알고리즘 신발끈공식 CCW(Counter ClockWise)
+		//신발끈 공식은 좌표평면 상에서 꼭짓점의 좌표를 알 때 다각형의 면적을 구할 수 있는 방법
+		
 		//반시계 <-> 양수
 		//시계 <-> 음수
 		//일직선 <-> 0
